@@ -1,75 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MOUSE CURSOR</title>
     <style>
-        *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background: #000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-#main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: auto;
-}
-.cursor{
-    background: #fff;
-    height:50px ;
-    width: 50px;
-    mix-blend-mode: difference;          /* learn this new  create contrasing color*/
-    border-radius: 50%;
-    position: absolute;                /* need a lecture on this topic */
-    transition: all linear 0.15s;      /* need a lecture on this topic */
-}
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: auto;
+        }
 
-h1{
-    font-size: 6rem;
-    color: #ffff;
+        .cursor {
+            background: #fff;
+            height: 50px;
+            width: 50px;
+            mix-blend-mode: difference;
+            /* learn this new  create contrasing color*/
+            border-radius: 50%;
+            position: absolute;
+            /* need a lecture on this topic */
+            transition: all linear 0.15s;
+            /* need a lecture on this topic */
+        }
 
-}
+        h1 {
+            font-size: 6rem;
+            color: #ffff;
+
+        }
     </style>
 </head>
+
 <body>
     <div id="main">
-        <div class="cursor"></div>
         <h1>MOUSE MOVE</h1>
+        <div class="cursor"></div>
     </div>
 
 
-    
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
 
-        var main=document.querySelector("#main")
-        var cursor=document.querySelector(".cursor")
+        var main = document.querySelector("#main")
+        var cursor = document.querySelector(".cursor")
 
-        main.addEventListener("mousemove",function(dets){
+        main.addEventListener("mousemove", function (dets) {
 
             // "dets" is equivalent to "details"
             // console.log(dets.target.textContent)
-            cursor.style.left=dets.x +"px"
-            cursor.style.top=dets.y +"px"
+            cursor.style.left = dets.x + "px"
+            cursor.style.top = dets.y + "px"
         })
 
 
-
-
-
-
-
-
-
-
+        gsap.from("h1", {
+            duration: 1,
+            ease: "power1.inOut",
+            delay: 0.5,
+            y: -500
+        })
 
     </script>
 </body>
+
 </html>
