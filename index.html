@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+.cursor{
+    background: #fff;
+    height:50px ;
+    width: 50px;
+    mix-blend-mode: difference;          /* learn this new  create contrasing color*/
+    border-radius: 50%;
+    position: absolute;                /* need a lecture on this topic */
+    transition: all linear 0.15s;      /* need a lecture on this topic */
+}
+
+h1{
+    font-size: 6rem;
+    color: #ffff;
+
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="cursor"></div>
+        <h1>MOUSE MOVE</h1>
+    </div>
+
+
+    
+
+
+    <script>
+
+        var main=document.querySelector("#main")
+        var cursor=document.querySelector(".cursor")
+
+        main.addEventListener("mousemove",function(dets){
+
+            // "dets" is equivalent to "details"
+            // console.log(dets.target.textContent)
+            cursor.style.left=dets.x +"px"
+            cursor.style.top=dets.y +"px"
+        })
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
